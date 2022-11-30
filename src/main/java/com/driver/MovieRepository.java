@@ -28,9 +28,9 @@ public class MovieRepository {
 
     public void addMovieDirectorPair(String movieName, String directorName){
         if(movieHashMap.containsKey(movieName) && directorHashMap.containsKey(directorName)){
-            ArrayList<String>directorMovies = new ArrayList<>();
+            List<String>directorMovies = new ArrayList<>();
             if(directorMovieList.containsKey(directorName)){
-                directorMovies = (ArrayList<String>) directorMovieList.get(directorName);
+                directorMovies = directorMovieList.get(directorName);
                 directorMovieList.put(directorName, directorMovies);
             }
             else{
@@ -48,22 +48,22 @@ public class MovieRepository {
         return directorHashMap.get(directorName);
     }
 
-    public ArrayList<String> getMoviesByDirectorName(String directorName){
-        ArrayList<String> directorMovies = new ArrayList<>();
+    public List<String> getMoviesByDirectorName(String directorName){
+        List<String> directorMovies = new ArrayList<>();
         if(directorMovieList.containsKey(directorName)){
-            directorMovies = (ArrayList<String>) directorMovieList.get(directorName);
+            directorMovies = directorMovieList.get(directorName);
         }
         return directorMovies;
     }
 
-    public ArrayList<String> findAllMovies(){
+    public List<String> findAllMovies(){
         return new ArrayList<>(movieHashMap.keySet());
     }
 
     public void deleteDirectorByName(String directorName){
-        ArrayList<String> directorMovies;
+        List<String> directorMovies;
         if(directorMovieList.containsKey(directorName)){
-            directorMovies = (ArrayList<String>) directorMovieList.get(directorName);
+            directorMovies = directorMovieList.get(directorName);
             for(String movieName : directorMovies){
                 movieHashMap.remove(movieName);
             }
@@ -73,7 +73,7 @@ public class MovieRepository {
     }
 
     public void deleteAllDirectors(){
-        ArrayList<String> directorMovies = new ArrayList<>();
+        List<String> directorMovies = new ArrayList<>();
         for(String director : directorMovieList.keySet()){
             directorMovies.addAll(directorMovieList.get(director));
         }

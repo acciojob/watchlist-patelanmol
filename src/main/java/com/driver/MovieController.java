@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("movies")
@@ -49,15 +50,15 @@ public class MovieController {
     }
 
     @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity<ArrayList<String>> getMoviesByDirectorName(@PathVariable String director){
-        ArrayList<String>movies = movieService.getDirectorMovies(director);
+    public ResponseEntity<List<String>> getMoviesByDirectorName(@PathVariable String director){
+        List<String>movies = movieService.getDirectorMovies(director);
 
         return new ResponseEntity<>(movies, HttpStatus.CREATED);
     }
 
     @GetMapping("get-all-Movies")
-    public ResponseEntity<ArrayList<String>> findAllMovies(){
-        ArrayList<String>movies = movieService.getAllMovies();
+    public ResponseEntity<List<String>> findAllMovies(){
+        List<String> movies = movieService.getAllMovies();
         return new ResponseEntity<>(movies, HttpStatus.CREATED);
     }
 
