@@ -21,7 +21,7 @@ public class MovieController {
     }
 
     @PostMapping("/add-director")
-    public ResponseEntity<String> addMovie(@RequestBody Director director){
+    public ResponseEntity<String> addDirector(@RequestBody Director director){
         movieService.addDirector(director);
 
         return new ResponseEntity<>("Added Director", HttpStatus.CREATED);
@@ -49,7 +49,7 @@ public class MovieController {
     }
 
     @GetMapping("/get-movies-by-director-name/{director}")
-    public ResponseEntity<ArrayList<String>> getMovie(@PathVariable String director){
+    public ResponseEntity<ArrayList<String>> getMoviesByDirectorName(@PathVariable String director){
         ArrayList<String>movies = movieService.getDirectorMovies(director);
 
         return new ResponseEntity<>(movies, HttpStatus.CREATED);
