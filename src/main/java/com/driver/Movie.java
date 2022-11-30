@@ -1,15 +1,15 @@
-package com.driver.models;
+package com.driver;
 
-public class Director {
+public class Movie {
     private String name;
-    private int numberOfMovies;
+    private int durationInMinutes;
     private double imdbRating;
 
-    public Director(){}
+    public Movie(){}
 
-    public Director(String name, int numberOfMovies, double imdbRating) {
+    public Movie(String name, int durationInMinutes, double imdbRating) {
         this.name = name;
-        this.numberOfMovies = numberOfMovies;
+        this.durationInMinutes = durationInMinutes;
         this.imdbRating = imdbRating;
     }
 
@@ -21,12 +21,12 @@ public class Director {
         this.name = name;
     }
 
-    public int getNumberOfMovies() {
-        return numberOfMovies;
+    public int getDurationInMinutes() {
+        return durationInMinutes;
     }
 
-    public void setNumberOfMovies(int numberOfMovies) {
-        this.numberOfMovies = numberOfMovies;
+    public void setDurationInMinutes(int durationInMinutes) {
+        this.durationInMinutes = durationInMinutes;
     }
 
     public double getImdbRating() {

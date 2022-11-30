@@ -1,8 +1,5 @@
-package com.driver.controller;
+package com.driver;
 
-import com.driver.models.Director;
-import com.driver.models.Movie;
-import com.driver.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
