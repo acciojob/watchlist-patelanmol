@@ -31,12 +31,9 @@ public class MovieRepository {
             List<String>directorMovies = new ArrayList<>();
             if(directorMovieList.containsKey(directorName)){
                 directorMovies = directorMovieList.get(directorName);
-                directorMovieList.put(directorName, directorMovies);
             }
-            else{
-                directorMovies.add(movieName);
-                directorMovieList.put(directorName, directorMovies);
-            }
+            directorMovies.add(movieName);
+            directorMovieList.put(directorName, directorMovies);
         }
     }
 
